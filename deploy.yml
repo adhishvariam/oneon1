@@ -16,7 +16,7 @@ jobs:
            script: |
              mkdir oneonone
              cd oneonone
-             git clone 
+             git clone git@github.com:adhishvariam/oneon1.git
              echo 'Deployment Successfull'
            
     
