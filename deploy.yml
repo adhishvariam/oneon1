@@ -14,8 +14,8 @@ jobs:
            username: ${{secrets.SSH_USERNAME}}
 
            script: |
-             mkdir oneonone
-             cd oneonone
+             mkdir /home/test
+             cd test
              git clone git@github.com:adhishvariam/oneon1.git
              echo 'Deployment Successfull'
            
