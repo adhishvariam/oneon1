@@ -13,8 +13,7 @@ jobs:
           host: ${{secrets.SSH_HOST}}
           key: ${{secrets.SSH_KEY}}
           username: ${{secrets.SSH_USERNAME}}
-        run: |
-          ssh-keyscan ${{secrets.SSH_HOST}} >> ~/.ssh/known_hosts
+        script: |
           mkdir /home/test
           cd /home/test
           git clone git@github.com:adhishvariam/oneon1.git
