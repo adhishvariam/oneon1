@@ -1,7 +1,7 @@
 name: Build and Deploy OneonOne
 on:
    push:
-     branches: [master]
+     branches: [main]
 
 jobs:
   deploy:
