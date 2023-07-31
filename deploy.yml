@@ -1,23 +1,25 @@
 name: Build and Deploy OneonOne
+
 on:
-   push:
-     branches: [main]
+  push:
+    branches: [main]
 
 jobs:
   deploy:
-    runs-on: ubundu 20.04
+    runs-on: ubuntu-20.04
     steps:
-        name: Deploy
+      - name: Deploy
         with:
-           host: ${{secrets.SSH_HOST}}
-           key: ${{secrets.SSH_KEY}}
-           username: ${{secrets.SSH_USERNAME}}
+          host: ${{secrets.SSH_HOST}}
+          key: ${{secrets.SSH_KEY}}
+          username: ${{secrets.SSH_USERNAME}}
+        run: |
+          ssh-keyscan ${{secrets.SSH_HOST}} >> ~/.ssh/known_hosts
+          mkdir /home/test
+          cd /home/test
+          git clone git@github.com:adhishvariam/oneon1.git
+          echo 'Deployment Successful'
 
-           script: |
-             mkdir /home/test
-             cd test
-             git clone git@github.com:adhishvariam/oneon1.git
-             echo 'Deployment Successfull'
            
     
      
