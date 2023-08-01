@@ -12,7 +12,7 @@ jobs:
         env:
           DEPLOY_KEY: ${{secrets.SSH_KEY}}
         run: |
-          mkdir /home/test
+          sudo mkdir /home/test
           cd /home/test
           git clone git@github.com:adhishvariam/oneon1.git
           echo 'Deployment Successful'
