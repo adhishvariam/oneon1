@@ -8,13 +8,16 @@ jobs:
   deploy:
     runs-on: ubuntu-20.04
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2  # This step checks out your repository
+
       - name: Deploy
         env:
           DEPLOY_KEY: ${{secrets.SSH_KEY}}
           SSH_HOST: ${{secrets.SSH_HOST}}
           USERNAME: ${{secrets.SSH_USERNAME}}
         run: |
-          sudo mkdir /home/test
+          mkdir -p /home/test  # Creating directory if it doesn't exist
           cd /home/test
           git clone git@github.com:adhishvariam/oneon1.git
           echo 'Deployment Successful'
