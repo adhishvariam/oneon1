@@ -17,7 +17,7 @@ jobs:
           SSH_HOST: ${{secrets.SSH_HOST}}
           USERNAME: ${{secrets.SSH_USERNAME}}
         run: |
-          mkdir -p /home/test  
+          sudo mkdir /home/test  
           cd /home/test
           git clone git@github.com:adhishvariam/oneon1.git
           echo 'Deployment Successful'
